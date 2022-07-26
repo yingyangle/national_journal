@@ -1,0 +1,10 @@
+To start the server:
+
+cd books_api/myproject
+python manage.py runserver
+
+
+
+To view the client side:
+
+open books/index.html in browser

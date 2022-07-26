@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
+
+body {
+	color: #5b5b5b;
+	font-family: 'Nunito Sans', sans-serif;
+	text-align: center;
+}
+
+#container {
+	margin: 50px;
+}
+
+.book {
+	display: inline-block;
+	vertical-align:top;
+	margin: 10px;
+	padding: 20px;
+	/* margin: auto; */
+	width: 200px;
+	height: 300px;
+	background-color: #eeeeee;
+	border: 1px solid gray;
+}
+
+.book .title {
+	font-size: 1.5rem;
+	font-weight: bold;
+}

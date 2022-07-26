@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- PAGE INFO -->
+		<title>Books</title>
+		<meta name="description" content="Books">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- FAVICON -->
+		<link rel="icon" href="favicon.png">
+		
+		<!-- STYLESHEETS -->
+		<link rel="stylesheet" href="style.css">
+
+	</head>
+
+	<body class="text-center">
+
+		<div id="container" class="text-center">
+
+			<h1>Books</h1>
+
+			<div class="books"></div>
+			
+
+		</div>
+
+
+		<!-- SCRIPTS -->
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+		<script>
+			var data
+
+			// get data from API
+			$.ajax({
+				type: 'GET',
+				data: data,
+				url: 'http://127.0.0.1:8000/books/',
+				success: function(result){
+					data = result
+					console.log(data)
+					showBooks()
+				},
+				error: function(error) {
+					callbackErr(error,self)
+				}
+			})
+
+			function showBooks() {
+				// show book info
+				for (var book of data) {
+					var book_card = `<div class="book"><div class="title">${book.name}</div><br><b>Author</b>: ${book.author}<br><b>Genre</b>: ${book.genre}<br><b>Language</b>: ${book.language}</div>`
+					$('.books').append(book_card)
+				}
+			}
+
+		</script>
+	
+	</body>
+</html>
